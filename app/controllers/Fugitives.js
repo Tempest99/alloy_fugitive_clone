@@ -11,6 +11,17 @@ function dofilter(_collection) {
 	});
 }
 
+function transformFunction(model) {
+    // Need to convert the model to a JSON object
+    var transform = model.toJSON();
+    if(transform.name == "Don Thorp"){
+        transform.isBoolean = true;
+    } else {
+        transform.isBoolean = false;
+    }
+    return transform;
+}
+
 // ..
 // PRIVATE FUNCTIONS
 //
@@ -30,6 +41,12 @@ $.table.addEventListener('click', function(_e) {
 		parentTab : $.fugitiveTab,
 		data : fugitiveCollection.get(_e.rowData.model)
 	});
+	if(_e.row.hasDetail = true){
+	    
+	    Ti.API.info('_e.row.hasDetail: TRUE :: ' + _e.row.hasDetail );
+	} else {
+	    Ti.API.info('_e.row.hasDetail: FALSE :: ' + _e.row.hasDetail );
+	}
 
 	detailController.getView().addEventListener('open', function() {
 		if (OS_ANDROID) {

@@ -26,7 +26,7 @@ if (!Ti.App.Properties.hasProperty('seeded')) {
     Alloy.Collections.Fugitive.each(function(_m) {
         _m.save();
     });
-    Alloy.Globals.tabGroup
+    Alloy.Globals.tabGroup;
 
     Ti.App.Properties.setString('seeded', 'yuppers');
 

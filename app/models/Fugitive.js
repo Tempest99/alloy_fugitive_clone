@@ -38,4 +38,4 @@ exports.definition = {
 
         return Collection;
     }
-}
+};
